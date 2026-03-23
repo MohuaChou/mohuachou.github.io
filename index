@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fiona | Personal Homepage</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: #f7f8fc;
+      color: #222;
+      line-height: 1.7;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+    .hero {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      margin-bottom: 28px;
+    }
+    h1 {
+      margin: 0 0 12px;
+      font-size: 42px;
+    }
+    .subtitle {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+    .links a {
+      display: inline-block;
+      margin-right: 12px;
+      margin-bottom: 10px;
+      padding: 10px 16px;
+      border-radius: 10px;
+      text-decoration: none;
+      background: #111827;
+      color: white;
+    }
+    .card {
+      background: white;
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+      margin-bottom: 22px;
+    }
+    h2 {
+      margin-top: 0;
+      font-size: 24px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .project {
+      margin-bottom: 18px;
+    }
+    .project a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      color: #666;
+      font-size: 14px;
+      margin-top: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <h1>Hi, I'm Fiona 👋</h1>
+      <div class="subtitle">
+        计算机专业学生 / AI & 多模态方向 / 音频生成研究
+      </div>
+      <p>
+        欢迎来到我的个人主页。我主要关注人工智能、多模态学习、音频生成以及相关研究与项目实践。
+      </p>
+      <div class="links">
+        <a href="https://github.com/你的用户名" target="_blank">GitHub</a>
+        <a href="mailto:your_email@example.com">Email</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>About Me</h2>
+      <p>
+        我是一名计算机专业学生，关注 AI、多模态、生成模型和科研实践。
+        这个网站用于展示我的项目、研究兴趣和联系方式。
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Skills</h2>
+      <ul>
+        <li>Python / PyTorch / Git / Linux</li>
+        <li>Machine Learning / Deep Learning</li>
+        <li>Multimodal Learning / Audio Generation</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Projects</h2>
+
+      <div class="project">
+        <a href="https://github.com/你的用户名/项目1" target="_blank">Project 1</a>
+        <div>这里写一句项目简介，比如：一个基于深度学习的多模态生成项目。</div>
+      </div>
+
+      <div class="project">
+        <a href="https://github.com/你的用户名/项目2" target="_blank">Project 2</a>
+        <div>这里写一句项目简介，比如：一个音频理解或音频生成相关实验。</div>
+      </div>
+
+      <div class="project">
+        <a href="https://github.com/你的用户名/项目3" target="_blank">Project 3</a>
+        <div>这里写一句项目简介，比如：课程项目、比赛项目或科研代码。</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Contact</h2>
+      <p>Email: your_email@example.com</p>
+    </section>
+
+    <footer>
+      © 2026 Fiona. Built with GitHub Pages.
+    </footer>
+  </div>
+</body>
+</html>

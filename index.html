@@ -3,62 +3,66 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rui Zhou | Homepage</title>
-  <meta name="description" content="Rui Zhou's academic homepage" />
+  <title>Rui Zhou | Academic Homepage</title>
+  <meta
+    name="description"
+    content="Rui Zhou's academic homepage: medical image analysis, multimodal learning, pre-training, and audio generation."
+  />
   <style>
     :root {
-      --text: #222;
-      --subtext: #555;
-      --line: #d9d9d9;
-      --link: #1a73c9;
-      --bg: #ffffff;
-      --max-width: 980px;
+      --bg: #f7f8fc;
+      --panel: #ffffff;
+      --text: #122033;
+      --muted: #5b677a;
+      --line: #e5e9f2;
+      --navy: #153a5b;
+      --blue: #2f6fed;
+      --teal: #0f766e;
+      --violet: #6d5efc;
+      --amber: #b45309;
+      --rose: #be185d;
+      --shadow: 0 14px 36px rgba(17, 24, 39, 0.08);
+      --maxw: 1060px;
+      --radius: 18px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
-      background: var(--bg);
+      background:
+        radial-gradient(circle at top right, rgba(47, 111, 237, 0.06), transparent 22%),
+        radial-gradient(circle at left top, rgba(109, 94, 252, 0.05), transparent 24%),
+        var(--bg);
       color: var(--text);
-      font-family: Arial, "Helvetica Neue", Helvetica, "PingFang SC", "Microsoft YaHei", sans-serif;
-      line-height: 1.7;
-      font-size: 17px;
+      font-family: Inter, Arial, "Helvetica Neue", Helvetica, "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.75;
+      font-size: 16px;
     }
 
     a {
-      color: var(--link);
+      color: inherit;
       text-decoration: none;
     }
 
-    a:hover {
-      text-decoration: underline;
-    }
-
     .container {
-      max-width: var(--max-width);
+      width: min(var(--maxw), calc(100% - 40px));
       margin: 0 auto;
-      padding: 0 24px 64px;
     }
 
     .topbar {
       position: sticky;
       top: 0;
-      background: rgba(255, 255, 255, 0.96);
-      border-bottom: 1px solid #efefef;
       z-index: 100;
+      background: rgba(247, 248, 252, 0.82);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(229, 233, 242, 0.9);
     }
 
     .topbar-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 14px 24px;
+      min-height: 68px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -67,298 +71,885 @@
 
     .site-name {
       font-size: 22px;
-      font-weight: 700;
-      color: var(--link);
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: 0.2px;
     }
 
     .nav {
       display: flex;
       flex-wrap: wrap;
       gap: 16px;
-      font-size: 15px;
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 600;
     }
 
-    .nav a {
-      color: #444;
+    .nav a:hover {
+      color: var(--blue);
     }
 
     .hero {
+      padding: 42px 0 28px;
+    }
+
+    .hero-grid {
       display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 32px;
-      padding: 40px 0 28px;
+      grid-template-columns: 240px 1fr;
+      gap: 34px;
       align-items: start;
     }
 
-    .avatar-box {
-      width: 180px;
-      height: 220px;
+    .portrait-card,
+    .intro-card {
+      background: var(--panel);
       border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .portrait-card {
+      padding: 20px;
+    }
+
+    .portrait-frame {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      border-radius: 18px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #e9eef9, #f8fbff);
+      border: 1px solid var(--line);
+      position: relative;
+    }
+
+    .portrait-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .portrait-fallback {
+      position: absolute;
+      inset: 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #888;
-      font-size: 16px;
-      background: #fafafa;
+      font-size: 48px;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: 2px;
     }
 
-    .name {
-      font-size: 42px;
+    .portrait-note {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .intro-card {
+      padding: 30px 34px 28px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #eef4ff;
+      color: var(--blue);
+      font-size: 13px;
       font-weight: 700;
-      line-height: 1.15;
-      margin: 0 0 10px;
-    }
-
-    .name-sub {
-      font-size: 18px;
-      color: var(--subtext);
       margin-bottom: 14px;
     }
 
-    .intro-list {
+    .name {
       margin: 0;
-      padding-left: 20px;
+      font-size: 42px;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      color: var(--navy);
     }
 
-    .intro-list li {
-      margin-bottom: 6px;
+    .subtitle {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 18px;
     }
 
-    .links {
-      margin-top: 12px;
+    .intro {
+      margin-top: 18px;
+      color: #364152;
+      max-width: 760px;
+    }
+
+    .quick-info {
+      margin-top: 18px;
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
-      font-size: 15px;
+      gap: 10px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #f5f7fb;
+      border: 1px solid var(--line);
+      color: #334155;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .hero-links {
+      margin-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 16px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 700;
+      border: 1px solid var(--line);
+      background: white;
+      color: var(--text);
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      color: white;
+      border: none;
+    }
+
+    .btn.ghost {
+      background: #f8faff;
     }
 
     .section {
       border-top: 1px solid var(--line);
-      padding: 24px 0 10px;
+      padding: 28px 0 8px;
     }
 
     .section-title {
+      margin: 0 0 14px;
       font-size: 30px;
-      font-weight: 700;
-      margin: 0 0 14px;
-      line-height: 1.2;
+      line-height: 1.15;
+      color: var(--navy);
+      letter-spacing: -0.01em;
     }
 
-    .section p {
-      margin: 0 0 14px;
+    .section-desc {
+      margin: 0 0 20px;
+      color: var(--muted);
+      max-width: 780px;
     }
 
-    .item-list {
+    .interest-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .interest-card,
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .interest-card {
+      padding: 20px 22px;
+    }
+
+    .interest-card h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      color: var(--navy);
+    }
+
+    .interest-card p {
       margin: 0;
-      padding-left: 22px;
+      color: var(--muted);
+      font-size: 14px;
     }
 
-    .item-list li {
-      margin-bottom: 12px;
+    .timeline-list {
+      display: grid;
+      gap: 18px;
     }
 
-    .pub-list {
+    .timeline-item,
+    .project-item,
+    .pub-item,
+    .patent-item {
+      padding: 22px 24px;
+    }
+
+    .meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+
+    .meta-title {
       margin: 0;
-      padding-left: 22px;
+      font-size: 20px;
+      color: var(--navy);
+      line-height: 1.3;
     }
 
-    .pub-list li {
-      margin-bottom: 16px;
+    .meta-subtitle {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 3px;
     }
 
-    .pub-title {
+    .date-badge {
+      flex-shrink: 0;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #eef4ff;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .content {
+      color: #374151;
+      margin-top: 10px;
+    }
+
+    .content ul {
+      margin: 10px 0 0 20px;
+      padding: 0;
+    }
+
+    .content li {
+      margin-bottom: 6px;
+    }
+
+    .project-links,
+    .pub-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .small-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--navy);
+      transition: 0.18s ease;
+    }
+
+    .small-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 16px rgba(17, 24, 39, 0.08);
+    }
+
+    .small-btn.code {
+      background: #f3f7ff;
+      color: var(--blue);
+      border-color: #dbe7ff;
+    }
+
+    .small-btn.paper {
+      background: #f5f7fb;
+    }
+
+    .venue-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      margin-bottom: 10px;
+    }
+
+    .venue-mia {
+      background: rgba(47, 111, 237, 0.12);
+      color: var(--blue);
+    }
+
+    .venue-ejnmmi {
+      background: rgba(15, 118, 110, 0.12);
+      color: var(--teal);
+    }
+
+    .authors {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 6px;
+    }
+
+    .pub-note {
+      margin-top: 10px;
+      color: #374151;
+    }
+
+    .split-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .split-card {
+      padding: 22px 24px;
+    }
+
+    .split-card h3 {
+      margin: 0 0 12px;
+      font-size: 20px;
+      color: var(--navy);
+    }
+
+    .award-list,
+    .edu-list,
+    .contact-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .award-list li,
+    .edu-list li,
+    .contact-list li {
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fcfdff;
+    }
+
+    .award-main,
+    .edu-main {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      color: var(--text);
       font-weight: 700;
     }
 
-    .two-line {
-      margin-top: 2px;
-      color: var(--subtext);
-      font-size: 15px;
+    .mini-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 8px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      border: 1px solid transparent;
+    }
+
+    .tag-academic {
+      background: rgba(47, 111, 237, 0.10);
+      color: var(--blue);
+      border-color: rgba(47, 111, 237, 0.15);
+    }
+
+    .tag-competition {
+      background: rgba(190, 24, 93, 0.10);
+      color: var(--rose);
+      border-color: rgba(190, 24, 93, 0.15);
+    }
+
+    .tag-solo {
+      background: rgba(180, 83, 9, 0.10);
+      color: var(--amber);
+      border-color: rgba(180, 83, 9, 0.15);
+    }
+
+    .tag-team {
+      background: rgba(15, 118, 110, 0.10);
+      color: var(--teal);
+      border-color: rgba(15, 118, 110, 0.15);
+    }
+
+    .award-sub,
+    .edu-sub,
+    .contact-sub {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 14px;
     }
 
     .footer {
       border-top: 1px solid var(--line);
+      padding: 20px 0 46px;
       margin-top: 18px;
-      padding-top: 18px;
-      color: #666;
+      color: var(--muted);
       font-size: 14px;
+      text-align: center;
     }
 
-    @media (max-width: 760px) {
-      .hero {
+    @media (max-width: 900px) {
+      .hero-grid,
+      .interest-grid,
+      .split-grid {
         grid-template-columns: 1fr;
       }
+    }
 
-      .avatar-box {
-        width: 160px;
-        height: 200px;
+    @media (max-width: 720px) {
+      .container {
+        width: min(var(--maxw), calc(100% - 24px));
+      }
+
+      .topbar-inner {
+        padding: 12px 0;
+        align-items: flex-start;
+        flex-direction: column;
       }
 
       .name {
         font-size: 34px;
       }
 
-      .topbar-inner {
-        align-items: flex-start;
-        flex-direction: column;
+      .intro-card {
+        padding: 24px 20px;
+      }
+
+      .portrait-card {
+        padding: 14px;
+      }
+
+      .section-title {
+        font-size: 26px;
+      }
+
+      .timeline-item,
+      .project-item,
+      .pub-item,
+      .patent-item,
+      .split-card {
+        padding: 18px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="topbar">
-    <div class="topbar-inner">
+  <header class="topbar">
+    <div class="container topbar-inner">
       <div class="site-name">Rui Zhou</div>
       <nav class="nav">
         <a href="#about">About</a>
-        <a href="#education">Education</a>
-        <a href="#research">Research</a>
+        <a href="#interests">Research</a>
+        <a href="#projects">Projects</a>
         <a href="#publications">Publications</a>
         <a href="#patents">Patents</a>
         <a href="#honors">Honors</a>
+        <a href="#education">Education</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
-  </div>
+  </header>
 
-  <div class="container">
-    <section class="hero">
-      <div class="avatar-box">
-        Photo
-      </div>
+  <main class="container">
+    <section class="hero" id="about">
+      <div class="hero-grid">
+        <div class="portrait-card">
+          <div class="portrait-frame">
+            <img src="photo.jpg" alt="Rui Zhou portrait"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="portrait-fallback" style="display:none;">RZ</div>
+          </div>
+          <div class="portrait-note">Replace <code>photo.jpg</code> with your own photo.</div>
+        </div>
 
-      <div>
-        <h1 class="name">Rui Zhou</h1>
-        <div class="name-sub">M.Sc. Student in Electronic Information, University of Science and Technology of China</div>
+        <div class="intro-card">
+          <div class="eyebrow">Medical Imaging · Multimodal Learning · Audio Generation</div>
+          <h1 class="name">Rui Zhou</h1>
+          <div class="subtitle">M.Sc. Student in Electronic Information, University of Science and Technology of China</div>
 
-        <ul class="intro-list">
-          <li>Research interests: artificial intelligence, medical image analysis, multimodal deep learning, and computer vision.</li>
-          <li>Currently working on data-efficient representation learning and intelligent analysis for medical imaging.</li>
-          <li>Personal homepage for research, publications, patents, and selected honors.</li>
-        </ul>
+          <div class="intro">
+            I am interested in data-efficient learning, medical image analysis, multimodal deep learning,
+            and controllable audio generation. My current work spans self-supervised pre-training for
+            3D ultrasound analysis, multimodal prediction on PET/CT, and event-aware audio generation
+            with MMAudio-based systems.
+          </div>
 
-        <div class="links">
-          <a href="https://github.com/MohuaChou" target="_blank">GitHub</a>
-          <a href="mailto:rayzhouluvrain@163.com">Email</a>
-          <a href="https://mohuachou.github.io" target="_blank">Homepage</a>
-          <a href="#">Google Scholar</a>
+          <div class="quick-info">
+            <span class="chip">USTC</span>
+            <span class="chip">Medical Image Analysis</span>
+            <span class="chip">Pre-training & SSL</span>
+            <span class="chip">Multimodal Learning</span>
+            <span class="chip">Audio Generation</span>
+          </div>
+
+          <div class="hero-links">
+            <a class="btn primary" href="#publications">View Publications</a>
+            <a class="btn ghost" href="#projects">Selected Projects</a>
+            <a class="btn ghost" href="mailto:rayzhouluvrain@163.com">Email</a>
+            <a class="btn ghost" href="https://github.com/MohuaChou" target="_blank">GitHub</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="about" class="section">
-      <h2 class="section-title">About</h2>
-      <p>
-        I am currently an M.Sc. student in Electronic Information at the University of Science and Technology of China.
-        My research interests lie in artificial intelligence, medical image analysis, multimodal learning, and deep learning for healthcare applications.
+    <section class="section" id="interests">
+      <h2 class="section-title">Research Areas</h2>
+      <p class="section-desc">
+        I focus on representation learning and practical multimodal systems, with a strong interest in
+        how models learn structure from limited data and how conditional control can be improved in generation.
       </p>
-      <p>
-        My recent work focuses on data-efficient learning for medical imaging, including multimodal prediction with PET/CT and self-supervised learning for 3D ultrasound analysis.
+
+      <div class="interest-grid">
+        <div class="interest-card">
+          <h3>Pre-training & Self-Supervised Learning</h3>
+          <p>
+            Data-efficient pre-training, masked image modeling, hybrid CNN-MLP architectures,
+            and learning robust representations under limited annotation.
+          </p>
+        </div>
+
+        <div class="interest-card">
+          <h3>Medical Image Analysis</h3>
+          <p>
+            3D ultrasound, PET/CT, segmentation, prediction modeling, and clinically meaningful
+            multimodal analysis for healthcare applications.
+          </p>
+        </div>
+
+        <div class="interest-card">
+          <h3>Multimodal Learning</h3>
+          <p>
+            Cross-modal representation learning, vision-audio-text interaction, and multimodal
+            prediction pipelines for medical and generative tasks.
+          </p>
+        </div>
+
+        <div class="interest-card">
+          <h3>Audio Generation</h3>
+          <p>
+            Event-centric audio generation, late-stage condition control, and controllability-grounding
+            tradeoffs in MMAudio / video-to-audio systems.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <h2 class="section-title">Selected Projects</h2>
+      <p class="section-desc">
+        Ongoing and representative research projects. I kept the page focused on the lines you asked to retain.
       </p>
-    </section>
 
-    <section id="education" class="section">
-      <h2 class="section-title">Education</h2>
-      <ul class="item-list">
-        <li>
-          <strong>University of Science and Technology of China</strong>, M.Sc. in Electronic Information, 2025 – Present
-        </li>
-        <li>
-          <strong>Nantong University</strong>, Bachelor's Degree
-        </li>
-      </ul>
-    </section>
-
-    <section id="research" class="section">
-      <h2 class="section-title">Research Experience</h2>
-      <ul class="item-list">
-        <li>
-          <strong>Shenzhen Mindray Research Project</strong>
-          <div class="two-line">
-            Worked on data-efficient self-supervised learning for 3D ultrasound analysis.
-            The related manuscript, <em>When Grouped Cyclic Shift Meets Masked Image Modeling: Effective Pre-training for Data-scarce 3D Ultrasound Analysis Tasks</em>,
-            is currently under major revision at <em>Medical Image Analysis</em>.
+      <div class="timeline-list">
+        <article class="card project-item">
+          <div class="meta-row">
+            <div>
+              <h3 class="meta-title">Controllable Audio Generation with MMAudio / Omnifoley</h3>
+              <div class="meta-subtitle">Current research · audio generation · multimodal control</div>
+            </div>
+            <span class="date-badge">Ongoing</span>
           </div>
-        </li>
 
-        <li>
-          <strong>Deep Learning Model for Preoperative Prediction of Lymph Node Metastasis in Prostate Cancer</strong>
-          <div class="two-line">
-            Served as algorithm lead in a medical-engineering collaborative project.
-            Built a multimodal deep learning pipeline for PSMA PET/CT analysis using 3D ResNet, transfer learning, and SVM classification.
-            The model achieved an AUC of 0.89 and improved predictive accuracy over conventional baseline models.
+          <div class="content">
+            I am currently exploring controllable video-to-audio generation, especially how text can regain
+            control from visually dominant late-stage conditions. The recent direction focuses on
+            late-stage clip attenuation / clip gating, event-centric generation, and better controllability-grounding
+            tradeoffs in MMAudio-based pipelines.
           </div>
-        </li>
-      </ul>
+
+          <div class="project-links">
+            <span class="small-btn">Current Research</span>
+          </div>
+        </article>
+
+        <article class="card project-item">
+          <div class="meta-row">
+            <div>
+              <h3 class="meta-title">Grouped Cyclic Shift Masked Image Modeling for 3D Ultrasound</h3>
+              <div class="meta-subtitle">Shenzhen Mindray collaboration · pre-training · 3D ultrasound analysis</div>
+            </div>
+            <span class="date-badge">Major Revision</span>
+          </div>
+
+          <div class="content">
+            A data-efficient self-supervised learning framework for 3D ultrasound analysis.
+            The work combines a hybrid CNN-MLP encoder with Grouped Cyclic Shift and Mask-Guided Feature
+            Reformation to make masked image modeling more effective under scarce-data settings.
+          </div>
+
+          <div class="project-links">
+            <a class="small-btn code" href="https://github.com/MohuaChou/GCSMIM" target="_blank">Code</a>
+          </div>
+        </article>
+
+        <article class="card project-item">
+          <div class="meta-row">
+            <div>
+              <h3 class="meta-title">PSMA PET/CT-based Multimodal Prediction of Pelvic Lymph-node Metastases</h3>
+              <div class="meta-subtitle">Algorithm lead · multimodal prediction · nuclear medicine</div>
+            </div>
+            <span class="date-badge">2023–2024</span>
+          </div>
+
+          <div class="content">
+            Built a multimodal deep learning pipeline for preoperative prediction of lymph-node metastases
+            in prostate cancer patients. The project used 3D ResNet-based PET/CT modeling, transfer learning,
+            and SVM classification, and later evolved into the published EJNMMI paper.
+          </div>
+
+          <div class="project-links">
+            <a class="small-btn paper" href="https://doi.org/10.1007/s00259-024-07065-2" target="_blank">Paper</a>
+            <a class="small-btn code" href="https://github.com/MoHuaZR/ProstatePrediction" target="_blank">Code</a>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <section id="publications" class="section">
+    <section class="section" id="publications">
       <h2 class="section-title">Publications</h2>
-      <ul class="pub-list">
-        <li>
-          <span class="pub-title">When Grouped Cyclic Shift Meets Masked Image Modeling: Effective Pre-training for Data-scarce 3D Ultrasound Analysis Tasks</span><br />
-          <em>Medical Image Analysis</em>, major revision.
-          <div class="two-line">
-            Research on data-efficient self-supervised pre-training for 3D ultrasound analysis.
-          </div>
-        </li>
+      <p class="section-desc">
+        Selected research outputs. Venue / status badges are shown before each title.
+      </p>
 
-        <li>
-          <span class="pub-title">Ma Q, Chen B, Seifert R, Zhou R, Xiao L, Yang J, Rominger A, Shi K, Li W, Tang Y, Hu S. PSMA PET/CT based multimodal deep learning model for accurate prediction of pelvic lymph-node metastases in prostate cancer patients identified as candidates for extended pelvic lymph node dissection by preoperative nomograms.</span><br />
-          <em>Eur J Nucl Med Mol Imaging.</em> 2025 May;52(6):2063-2075.
-          <div class="two-line">
+      <div class="timeline-list">
+        <article class="card pub-item">
+          <div class="venue-badge venue-mia">Medical Image Analysis · Major Revision</div>
+          <h3 class="meta-title">When Grouped Cyclic Shift Meets Masked Image Modeling: Effective Pre-training for Data-scarce 3D Ultrasound Analysis Tasks</h3>
+          <div class="authors">
+            Rui Zhou*, Yingtai Li*, Tianzhu Liang, Chang Xiao, Chenxu Wu, Teng Wang,
+            Junxiong Yu, Muqing Lin†, Shaohua Kevin Zhou†
+          </div>
+          <div class="pub-note">
+            A data-efficient self-supervised pre-training framework for 3D ultrasound analysis,
+            combining grouped cyclic shift, sparse computation, and mask-guided feature reformation.
+          </div>
+          <div class="pub-links">
+            <a class="small-btn code" href="https://github.com/MohuaChou/GCSMIM" target="_blank">Code</a>
+          </div>
+        </article>
+
+        <article class="card pub-item">
+          <div class="venue-badge venue-ejnmmi">EJNMMI · 2025</div>
+          <h3 class="meta-title">PSMA PET/CT based multimodal deep learning model for accurate prediction of pelvic lymph-node metastases in prostate cancer patients identified as candidates for extended pelvic lymph node dissection by preoperative nomograms</h3>
+          <div class="authors">
+            Ma Q, Chen B, Seifert R, Zhou R, Xiao L, Yang J, Rominger A, Shi K, Li W, Tang Y, Hu S.
+          </div>
+          <div class="pub-note">
+            <em>Eur J Nucl Med Mol Imaging.</em> 2025 May;52(6):2063–2075.
             doi: 10.1007/s00259-024-07065-2. Epub 2025 Jan 27. PMID: 39865180.
           </div>
-        </li>
-
-        <li>
-          <span class="pub-title">Altered intra- and inter-network connectivity in autism spectrum disorder</span><br />
-          <em>Aging-US</em>.
-          <div class="two-line">
-            Published work on altered functional connectivity patterns in autism spectrum disorder.
+          <div class="pub-links">
+            <a class="small-btn paper" href="https://doi.org/10.1007/s00259-024-07065-2" target="_blank">Paper</a>
+            <a class="small-btn paper" href="https://pubmed.ncbi.nlm.nih.gov/39865180/" target="_blank">PMID</a>
+            <a class="small-btn code" href="https://github.com/MoHuaZR/ProstatePrediction" target="_blank">Code</a>
           </div>
-        </li>
-      </ul>
+        </article>
+      </div>
     </section>
 
-    <section id="patents" class="section">
+    <section class="section" id="patents">
       <h2 class="section-title">Patents</h2>
-      <ul class="item-list">
-        <li>
-          <strong>A Brain Tumor Image Segmentation Method Based on Multiscale Convolution and Mamba Structure</strong>
-          <div class="two-line">First inventor, application accepted.</div>
-        </li>
-        <li>
-          <strong>A Feedback System and Method for Balance Beam Games Based on Depth Imaging Technology</strong>
-          <div class="two-line">First inventor, authorized.</div>
-        </li>
-      </ul>
+      <div class="timeline-list">
+        <article class="card patent-item">
+          <div class="meta-row">
+            <div>
+              <h3 class="meta-title">A Brain Tumor Image Segmentation Method Based on Multiscale Convolution and Mamba Structure</h3>
+              <div class="meta-subtitle">First inventor</div>
+            </div>
+            <span class="date-badge">Accepted</span>
+          </div>
+        </article>
+
+        <article class="card patent-item">
+          <div class="meta-row">
+            <div>
+              <h3 class="meta-title">A Feedback System and Method for Balance Beam Games Based on Depth Imaging Technology</h3>
+              <div class="meta-subtitle">First inventor</div>
+            </div>
+            <span class="date-badge">Authorized</span>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <section id="honors" class="section">
+    <section class="section" id="honors">
       <h2 class="section-title">Selected Honors and Awards</h2>
-      <ul class="item-list">
-        <li>National Scholarship</li>
-        <li>Jiangsu Provincial “Three Good Student”</li>
-        <li>First Prize, National Advanced Mapping Technology and Product Information Modeling Innovation Competition</li>
-        <li>Second Prize, National College Student Intelligent Car Competition</li>
-        <li>First Prize, Provincial “Internet+” Innovation and Entrepreneurship Competition</li>
-        <li>Second Prize, Lanqiao Cup Provincial Competition (Python Group)</li>
-      </ul>
+      <p class="section-desc">
+        Academic distinctions and innovation competitions are separated for readability.
+      </p>
+
+      <div class="split-grid">
+        <div class="card split-card">
+          <h3>Academic Honors</h3>
+          <ul class="award-list">
+            <li>
+              <div class="award-main">
+                National Scholarship
+                <span class="mini-tag tag-academic">academic honor</span>
+              </div>
+            </li>
+
+            <li>
+              <div class="award-main">
+                Jiangsu Provincial “Three Good Student”
+                <span class="mini-tag tag-academic">academic honor</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card split-card">
+          <h3>Innovation Competitions</h3>
+          <ul class="award-list">
+            <li>
+              <div class="award-main">
+                15th National Advanced Mapping Technology and Product Information Modeling Innovation Competition — National First Prize
+                <span class="mini-tag tag-competition">competition</span>
+                <span class="mini-tag tag-solo">solo</span>
+              </div>
+              <div class="award-sub">Mechanical category · 2022</div>
+            </li>
+
+            <li>
+              <div class="award-main">
+                18th National College Student Intelligent Car Competition — National Second Prize
+                <span class="mini-tag tag-competition">competition</span>
+                <span class="mini-tag tag-team">team 1/5</span>
+              </div>
+              <div class="award-sub">iFLYTEK Smart Agriculture group · 2023</div>
+            </li>
+
+            <li>
+              <div class="award-main">
+                14th China College Students Service Outsourcing Innovation and Entrepreneurship Competition — National Second Prize
+                <span class="mini-tag tag-competition">competition</span>
+                <span class="mini-tag tag-team">team 1/5</span>
+              </div>
+              <div class="award-sub">Enterprise topic category A · 2023</div>
+            </li>
+
+            <li>
+              <div class="award-main">
+                16th National Advanced Mapping Technology and Product Information Modeling Innovation Competition — National Second Prize
+                <span class="mini-tag tag-competition">competition</span>
+                <span class="mini-tag tag-solo">solo</span>
+              </div>
+              <div class="award-sub">Mechanical category · 2023</div>
+            </li>
+
+            <li>
+              <div class="award-main">
+                9th China International “Internet+” Innovation and Entrepreneurship Competition — Provincial First Prize
+                <span class="mini-tag tag-competition">competition</span>
+                <span class="mini-tag tag-team">team 3/10</span>
+              </div>
+              <div class="award-sub">Higher education main track · 2023</div>
+            </li>
+
+            <li>
+              <div class="award-main">
+                15th Lanqiao Cup Software and IT Talent Competition — Provincial Second Prize
+                <span class="mini-tag tag-competition">competition</span>
+                <span class="mini-tag tag-solo">individual</span>
+              </div>
+              <div class="award-sub">Python group · 2024</div>
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
 
-    <section id="contact" class="section">
+    <section class="section" id="education">
+      <h2 class="section-title">Education</h2>
+      <div class="split-grid">
+        <div class="card split-card">
+          <ul class="edu-list">
+            <li>
+              <div class="edu-main">
+                University of Science and Technology of China
+                <span class="mini-tag tag-academic">M.Sc.</span>
+              </div>
+              <div class="edu-sub">Electronic Information · 2025 – Present</div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card split-card">
+          <ul class="edu-list">
+            <li>
+              <div class="edu-main">
+                Nantong University
+                <span class="mini-tag tag-academic">B.Eng.</span>
+              </div>
+              <div class="edu-sub">Bachelor’s degree</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
       <h2 class="section-title">Contact</h2>
-      <ul class="item-list">
-        <li>Email: <a href="mailto:rayzhouluvrain@163.com">rayzhouluvrain@163.com</a></li>
-        <li>GitHub: <a href="https://github.com/MohuaChou" target="_blank">github.com/MohuaChou</a></li>
-        <li>Homepage: <a href="https://mohuachou.github.io" target="_blank">mohuachou.github.io</a></li>
-      </ul>
+      <div class="card split-card">
+        <ul class="contact-list">
+          <li>
+            <div class="award-main">Email</div>
+            <div class="contact-sub">
+              <a href="mailto:rayzhouluvrain@163.com">rayzhouluvrain@163.com</a>
+            </div>
+          </li>
+          <li>
+            <div class="award-main">GitHub</div>
+            <div class="contact-sub">
+              <a href="https://github.com/MohuaChou" target="_blank">github.com/MohuaChou</a>
+            </div>
+          </li>
+          <li>
+            <div class="award-main">Homepage</div>
+            <div class="contact-sub">
+              <a href="https://mohuachou.github.io" target="_blank">mohuachou.github.io</a>
+            </div>
+          </li>
+          <li>
+            <div class="award-main">Google Scholar</div>
+            <div class="contact-sub">
+              <a href="#" target="_blank">Add your Google Scholar link here</a>
+            </div>
+          </li>
+        </ul>
+      </div>
     </section>
 
     <div class="footer">
-      © 2026 Rui Zhou. Built with GitHub Pages.
+      © 2026 Rui Zhou · Built with GitHub Pages
     </div>
-  </div>
+  </main>
 </body>
 </html>

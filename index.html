@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ray | Homepage</title>
-  <meta name="description" content="Ray's personal homepage" />
+  <title>Rui Zhou | Homepage</title>
+  <meta name="description" content="Rui Zhou's academic homepage" />
   <style>
     :root {
       --text: #222;
@@ -154,7 +154,7 @@
     }
 
     .item-list li {
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .pub-list {
@@ -163,15 +163,11 @@
     }
 
     .pub-list li {
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
 
     .pub-title {
       font-weight: 700;
-    }
-
-    .muted {
-      color: var(--subtext);
     }
 
     .two-line {
@@ -212,14 +208,14 @@
 <body>
   <div class="topbar">
     <div class="topbar-inner">
-      <div class="site-name">Ray</div>
+      <div class="site-name">Rui Zhou</div>
       <nav class="nav">
         <a href="#about">About</a>
-        <a href="#news">News</a>
-        <a href="#publications">Publications</a>
-        <a href="#projects">Projects</a>
-        <a href="#honors">Honors</a>
         <a href="#education">Education</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#patents">Patents</a>
+        <a href="#honors">Honors</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -232,46 +228,67 @@
       </div>
 
       <div>
-        <h1 class="name">Ray</h1>
-        <div class="name-sub">Computer Science Student / AI Researcher</div>
+        <h1 class="name">Rui Zhou</h1>
+        <div class="name-sub">M.Sc. Student in Electronic Information, University of Science and Technology of China</div>
 
         <ul class="intro-list">
-          <li>Research interests: AI, multimodal learning, audio generation, event-centric generation.</li>
-          <li>Currently focusing on research projects, experiments, and model understanding.</li>
-          <li>Based in Singapore / China.</li>
+          <li>Research interests: artificial intelligence, medical image analysis, multimodal deep learning, and computer vision.</li>
+          <li>Currently working on data-efficient representation learning and intelligent analysis for medical imaging.</li>
+          <li>Personal homepage for research, publications, patents, and selected honors.</li>
         </ul>
 
         <div class="links">
           <a href="https://github.com/MohuaChou" target="_blank">GitHub</a>
-          <a href="mailto:your_email@example.com">Email</a>
+          <a href="mailto:rayzhouluvrain@163.com">Email</a>
+          <a href="https://mohuachou.github.io" target="_blank">Homepage</a>
           <a href="#">Google Scholar</a>
-          <a href="#">CV</a>
         </div>
       </div>
     </section>
 
     <section id="about" class="section">
-      <h2 class="section-title">About Me</h2>
+      <h2 class="section-title">About</h2>
       <p>
-        I am a computer science student interested in artificial intelligence, multimodal learning,
-        audio generation, and research-oriented system building.
+        I am currently an M.Sc. student in Electronic Information at the University of Science and Technology of China.
+        My research interests lie in artificial intelligence, medical image analysis, multimodal learning, and deep learning for healthcare applications.
       </p>
       <p>
-        My recent work focuses on how models understand key events, align information across modalities,
-        and generate outputs that are temporally coherent and perceptually meaningful.
-      </p>
-      <p>
-        This homepage collects my research interests, selected projects, publications, and academic experiences.
+        My recent work focuses on data-efficient learning for medical imaging, including multimodal prediction with PET/CT and self-supervised learning for 3D ultrasound analysis.
       </p>
     </section>
 
-    <section id="news" class="section">
-      <h2 class="section-title">News</h2>
+    <section id="education" class="section">
+      <h2 class="section-title">Education</h2>
       <ul class="item-list">
-        <li><strong>2026.03</strong> — Add your recent update here.</li>
-        <li><strong>2026.02</strong> — Add a paper / project / internship update here.</li>
-        <li><strong>2026.01</strong> — Add an academic achievement or milestone here.</li>
-        <li><strong>2025.12</strong> — Add another short update here.</li>
+        <li>
+          <strong>University of Science and Technology of China</strong>, M.Sc. in Electronic Information, 2025 – Present
+        </li>
+        <li>
+          <strong>Nantong University</strong>, Bachelor's Degree
+        </li>
+      </ul>
+    </section>
+
+    <section id="research" class="section">
+      <h2 class="section-title">Research Experience</h2>
+      <ul class="item-list">
+        <li>
+          <strong>Shenzhen Mindray Research Project</strong>
+          <div class="two-line">
+            Worked on data-efficient self-supervised learning for 3D ultrasound analysis.
+            The related manuscript, <em>When Grouped Cyclic Shift Meets Masked Image Modeling: Effective Pre-training for Data-scarce 3D Ultrasound Analysis Tasks</em>,
+            is currently under major revision at <em>Medical Image Analysis</em>.
+          </div>
+        </li>
+
+        <li>
+          <strong>Deep Learning Model for Preoperative Prediction of Lymph Node Metastasis in Prostate Cancer</strong>
+          <div class="two-line">
+            Served as algorithm lead in a medical-engineering collaborative project.
+            Built a multimodal deep learning pipeline for PSMA PET/CT analysis using 3D ResNet, transfer learning, and SVM classification.
+            The model achieved an AUC of 0.89 and improved predictive accuracy over conventional baseline models.
+          </div>
+        </li>
       </ul>
     </section>
 
@@ -279,125 +296,68 @@
       <h2 class="section-title">Publications</h2>
       <ul class="pub-list">
         <li>
-          <span class="pub-title">Paper Title One</span><br />
-          Authors, <em>Venue / Status</em>, Year.
+          <span class="pub-title">When Grouped Cyclic Shift Meets Masked Image Modeling: Effective Pre-training for Data-scarce 3D Ultrasound Analysis Tasks</span><br />
+          <em>Medical Image Analysis</em>, major revision.
           <div class="two-line">
-            A short one-sentence summary of the paper.
-            <a href="#">[Paper]</a>
-            <a href="#">[Code]</a>
-            <a href="#">[Project]</a>
+            Research on data-efficient self-supervised pre-training for 3D ultrasound analysis.
           </div>
         </li>
 
         <li>
-          <span class="pub-title">Paper Title Two</span><br />
-          Authors, <em>Venue / Status</em>, Year.
+          <span class="pub-title">Ma Q, Chen B, Seifert R, Zhou R, Xiao L, Yang J, Rominger A, Shi K, Li W, Tang Y, Hu S. PSMA PET/CT based multimodal deep learning model for accurate prediction of pelvic lymph-node metastases in prostate cancer patients identified as candidates for extended pelvic lymph node dissection by preoperative nomograms.</span><br />
+          <em>Eur J Nucl Med Mol Imaging.</em> 2025 May;52(6):2063-2075.
           <div class="two-line">
-            Another short one-sentence summary of the work.
-            <a href="#">[Paper]</a>
-            <a href="#">[Code]</a>
+            doi: 10.1007/s00259-024-07065-2. Epub 2025 Jan 27. PMID: 39865180.
           </div>
         </li>
 
         <li>
-          <span class="pub-title">Paper Title Three</span><br />
-          Authors, <em>arXiv / Under Review</em>, Year.
+          <span class="pub-title">Altered intra- and inter-network connectivity in autism spectrum disorder</span><br />
+          <em>Aging-US</em>.
           <div class="two-line">
-            Brief description of the contribution.
-            <a href="#">[Paper]</a>
+            Published work on altered functional connectivity patterns in autism spectrum disorder.
           </div>
         </li>
       </ul>
     </section>
 
-    <section id="projects" class="section">
-      <h2 class="section-title">Selected Projects</h2>
+    <section id="patents" class="section">
+      <h2 class="section-title">Patents</h2>
       <ul class="item-list">
         <li>
-          <strong>Project One</strong>
-          <div class="two-line">
-            A short description of the project, what problem it solves, and what tools or methods it uses.
-            <a href="#">[Code]</a>
-            <a href="#">[Demo]</a>
-          </div>
+          <strong>A Brain Tumor Image Segmentation Method Based on Multiscale Convolution and Mamba Structure</strong>
+          <div class="two-line">First inventor, application accepted.</div>
         </li>
-
         <li>
-          <strong>Project Two</strong>
-          <div class="two-line">
-            Another concise project description, suitable for a research or engineering project.
-            <a href="#">[Code]</a>
-          </div>
-        </li>
-
-        <li>
-          <strong>Project Three</strong>
-          <div class="two-line">
-            A compact summary for a class project, competition project, or research prototype.
-            <a href="#">[Code]</a>
-            <a href="#">[Slides]</a>
-          </div>
+          <strong>A Feedback System and Method for Balance Beam Games Based on Depth Imaging Technology</strong>
+          <div class="two-line">First inventor, authorized.</div>
         </li>
       </ul>
     </section>
 
     <section id="honors" class="section">
-      <h2 class="section-title">Honors and Awards</h2>
+      <h2 class="section-title">Selected Honors and Awards</h2>
       <ul class="item-list">
-        <li>Scholarship / Academic Honor, Year</li>
-        <li>Competition Award / Research Recognition, Year</li>
-        <li>Outstanding Student / Technical Achievement, Year</li>
-      </ul>
-    </section>
-
-    <section id="education" class="section">
-      <h2 class="section-title">Education</h2>
-      <ul class="item-list">
-        <li>
-          <strong>Your University</strong>, Degree, Year – Present
-          <div class="two-line">Department / School / Advisor (optional)</div>
-        </li>
-        <li>
-          <strong>Previous University</strong>, Degree, Year – Year
-          <div class="two-line">Department / School</div>
-        </li>
-      </ul>
-    </section>
-
-    <section id="experience" class="section">
-      <h2 class="section-title">Experience</h2>
-      <ul class="item-list">
-        <li>
-          <strong>Research Assistant / Student Researcher</strong>, Institution, Year – Present
-          <div class="two-line">Add one sentence describing your work.</div>
-        </li>
-        <li>
-          <strong>Intern</strong>, Company / Lab, Year – Year
-          <div class="two-line">Add one sentence describing your role.</div>
-        </li>
-      </ul>
-    </section>
-
-    <section id="services" class="section">
-      <h2 class="section-title">Professional Services</h2>
-      <ul class="item-list">
-        <li>Reviewer / Volunteer / Teaching Assistant information can go here.</li>
-        <li>Conference service, journal review, or lab responsibilities can go here.</li>
+        <li>National Scholarship</li>
+        <li>Jiangsu Provincial “Three Good Student”</li>
+        <li>First Prize, National Advanced Mapping Technology and Product Information Modeling Innovation Competition</li>
+        <li>Second Prize, National College Student Intelligent Car Competition</li>
+        <li>First Prize, Provincial “Internet+” Innovation and Entrepreneurship Competition</li>
+        <li>Second Prize, Lanqiao Cup Provincial Competition (Python Group)</li>
       </ul>
     </section>
 
     <section id="contact" class="section">
       <h2 class="section-title">Contact</h2>
       <ul class="item-list">
-        <li>Email: <a href="mailto:your_email@example.com">your_email@example.com</a></li>
+        <li>Email: <a href="mailto:rayzhouluvrain@163.com">rayzhouluvrain@163.com</a></li>
         <li>GitHub: <a href="https://github.com/MohuaChou" target="_blank">github.com/MohuaChou</a></li>
         <li>Homepage: <a href="https://mohuachou.github.io" target="_blank">mohuachou.github.io</a></li>
-        <li>Google Scholar / LinkedIn: <a href="#">Add your link here</a></li>
       </ul>
     </section>
 
     <div class="footer">
-      © 2026 Ray. Built with GitHub Pages.
+      © 2026 Rui Zhou. Built with GitHub Pages.
     </div>
   </div>
 </body>

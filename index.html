@@ -16,6 +16,7 @@
       --line: #dde3ec;
       --link: #1f5fbf;
       --link-hover: #174a95;
+      --navy: #173d77;
 
       --badge-blue-bg: #eef4ff;
       --badge-blue-text: #2359b8;
@@ -57,6 +58,15 @@
     a:hover {
       color: var(--link-hover);
       text-decoration: underline;
+    }
+
+    .inline-link {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .inline-link:hover {
+      color: var(--link-hover);
     }
 
     .container {
@@ -201,10 +211,19 @@
     }
 
     .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
       margin: 0 0 14px;
       font-size: 30px;
       line-height: 1.15;
       letter-spacing: -0.01em;
+    }
+
+    .section-icon {
+      font-size: 24px;
+      line-height: 1;
+      opacity: 0.95;
     }
 
     .section-desc {
@@ -266,9 +285,54 @@
     }
 
     .project-role {
-      margin-top: 4px;
+      margin-top: 6px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
       color: var(--muted);
       font-size: 14px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    .badge-navy {
+      background: #173d77;
+      color: #ffffff;
+    }
+
+    .badge-blue {
+      background: #eef4ff;
+      color: #2359b8;
+      border: 1px solid #d7e4fb;
+    }
+
+    .badge-green {
+      background: #edf8f3;
+      color: #1f7a4d;
+      border: 1px solid #d5efdf;
+    }
+
+    .badge-purple {
+      background: #f3efff;
+      color: #6c4fd3;
+      border: 1px solid #e3dafd;
+    }
+
+    .badge-gray {
+      background: #f5f7fa;
+      color: #516071;
+      border: 1px solid #dce3eb;
     }
 
     .project-body {
@@ -326,8 +390,9 @@
     .pub-figure img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       display: block;
+      background: #fff;
     }
 
     .pub-figure-fallback {
@@ -358,22 +423,22 @@
       letter-spacing: 0.02em;
     }
 
-    .badge-blue {
+    .badge-blue-top {
       background: var(--badge-blue-bg);
       color: var(--badge-blue-text);
     }
 
-    .badge-green {
+    .badge-green-top {
       background: var(--badge-green-bg);
       color: var(--badge-green-text);
     }
 
-    .badge-purple {
+    .badge-purple-top {
       background: var(--badge-purple-bg);
       color: var(--badge-purple-text);
     }
 
-    .badge-amber {
+    .badge-amber-top {
       background: var(--badge-amber-bg);
       color: var(--badge-amber-text);
     }
@@ -488,7 +553,7 @@
       <nav class="nav">
         <a href="#about">About</a>
         <a href="#areas">Research</a>
-        <a href="#projects">Projects</a>
+        <a href="#projects">Selected Projects</a>
         <a href="#publications">Publications</a>
         <a href="#patents">Patents</a>
         <a href="#honors">Honors</a>
@@ -502,7 +567,7 @@
     <section class="hero" id="about">
       <div class="hero-grid">
         <div class="portrait">
-          <img src="images/me.jpg" alt="Rui Zhou portrait"
+          <img src="images/photo.jpg" alt="Rui Zhou portrait"
                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
           <div class="portrait-fallback">RZ</div>
         </div>
@@ -514,10 +579,13 @@
           </div>
 
           <div class="intro">
-            I am interested in pre-training, self-supervised learning, medical image analysis,
-            multimodal deep learning, and audio generation. My recent work spans data-efficient
-            representation learning for 3D ultrasound analysis, multimodal prediction on PET/CT,
-            and controllable audio generation based on MMAudio pipelines.
+            I am a Master student at the
+            <a class="inline-link" href="https://en.ustc.edu.cn/" target="_blank">University of Science and Technology of China (USTC)</a>
+            supervised by
+            <a class="inline-link" href="https://www.linkedin.com/in/shaohua-kevin-zhou-231a094b/" target="_blank">Prof. Shaohua Kevin Zhou</a>.
+            I am interested in pre-training, self-supervised learning, medical image analysis, multimodal deep learning,
+            and audio generation. My recent work spans data-efficient representation learning for 3D ultrasound analysis,
+            multimodal prediction on PET/CT, and controllable audio generation based on MMAudio pipelines.
           </div>
 
           <div class="quick-tags">
@@ -539,7 +607,7 @@
     </section>
 
     <section class="section" id="areas">
-      <h2 class="section-title">Research Areas</h2>
+      <h2 class="section-title"><span class="section-icon">🧠</span> Research Areas</h2>
       <div class="area-list">
         <div class="area-item">
           <strong>Pre-training & Self-Supervised Learning.</strong>
@@ -555,21 +623,25 @@
         </div>
         <div class="area-item">
           <strong>Audio Generation.</strong>
-          <span>Event-centric and controllable video-to-audio generation, especially MMAudio style systems and late-stage control mechanisms.</span>
+          <span>Event-centric and controllable video-to-audio generation, especially MMAudio / Omnifoley style systems and late-stage control mechanisms.</span>
         </div>
       </div>
     </section>
 
     <section class="section" id="projects">
-      <h2 class="section-title">Selected Projects</h2>
+      <h2 class="section-title"><span class="section-icon">🌐</span> Selected Projects</h2>
 
       <div class="project-list">
         <div class="project-item">
           <div class="project-head">
-            <h3 class="project-title">Controllable Audio Generation with MMAudio</h3>
+            <h3 class="project-title">Controllable Audio Generation with MMAudio / Omnifoley</h3>
             <div class="project-date">Ongoing</div>
           </div>
-          <div class="project-role">Current research · audio generation · controllability</div>
+          <div class="project-role">
+            <span class="badge badge-navy">Current Research</span>
+            <span class="badge badge-green">Audio Generation</span>
+            <span class="badge badge-purple">Controllability</span>
+          </div>
           <div class="project-body">
             Exploring controllable video-to-audio generation, especially how text conditions can recover
             influence from visually dominant late-stage conditioning. Current directions include clip attenuation,
@@ -582,7 +654,11 @@
             <h3 class="project-title">Grouped Cyclic Shift Masked Image Modeling for 3D Ultrasound</h3>
             <div class="project-date">Major Revision</div>
           </div>
-          <div class="project-role">Shenzhen Mindray collaboration · pre-training · 3D ultrasound</div>
+          <div class="project-role">
+            <span class="badge badge-navy">Shenzhen Mindray Collaboration · Internship</span>
+            <span class="badge badge-blue">Pre-training</span>
+            <span class="badge badge-purple">3D Ultrasound</span>
+          </div>
           <div class="project-body">
             A data-efficient self-supervised learning framework for 3D ultrasound analysis.
             The work combines Grouped Cyclic Shift, sparse computation, and Mask-Guided Feature Reformation
@@ -598,7 +674,11 @@
             <h3 class="project-title">PSMA PET/CT-based Multimodal Prediction of Pelvic Lymph-node Metastases</h3>
             <div class="project-date">2023–2024</div>
           </div>
-          <div class="project-role">Algorithm lead · multimodal prediction · nuclear medicine</div>
+          <div class="project-role">
+            <span class="badge badge-navy">Algorithm Lead</span>
+            <span class="badge badge-blue">Multimodal Prediction</span>
+            <span class="badge badge-green">Nuclear Medicine</span>
+          </div>
           <div class="project-body">
             Built a multimodal deep learning pipeline for preoperative prediction of pelvic lymph-node metastases
             in prostate cancer patients, using PET/CT modeling, transfer learning, and machine learning classification.
@@ -612,9 +692,9 @@
     </section>
 
     <section class="section" id="publications">
-      <h2 class="section-title">Selected Publications</h2>
+      <h2 class="section-title"><span class="section-icon">📘</span> Publications</h2>
       <p class="section-desc">
-        I focus on pre-training, self-supervision, multimodal, medAI, audio generation.
+        You can place model figures or pipeline figures on the left. Replace the image files below with your own figures.
       </p>
 
       <div class="pub-list">
@@ -622,12 +702,12 @@
           <div class="pub-figure">
             <img src="images/paper_gcsmim.jpg" alt="GCSMIM model figure"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="pub-figure-fallback">Paper Figure<br>paper_gcsmim.jpg</div>
+            <div class="pub-figure-fallback">Paper Figure<br>images/paper_gcsmim.jpg</div>
           </div>
 
           <div>
             <div class="pub-meta-top">
-              <span class="venue-badge badge-blue">[ Medical Image Analysis · Major Revision ]</span>
+              <span class="venue-badge badge-blue-top">[ Medical Image Analysis · Major Revision ]</span>
             </div>
             <h3 class="pub-title">
               When Grouped Cyclic Shift Meets Masked Image Modeling: Effective Pre-training for Data-scarce 3D Ultrasound Analysis Tasks
@@ -650,12 +730,12 @@
           <div class="pub-figure">
             <img src="images/paper_petct.jpg" alt="PET CT model figure"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="pub-figure-fallback">Paper Figure<br>paper_petct.jpg</div>
+            <div class="pub-figure-fallback">Paper Figure<br>images/paper_petct.jpg</div>
           </div>
 
           <div>
             <div class="pub-meta-top">
-              <span class="venue-badge badge-green">[ EJNMMI · 2025 ]</span>
+              <span class="venue-badge badge-green-top">[ EJNMMI · 2025 ]</span>
             </div>
             <h3 class="pub-title">
               PSMA PET/CT based multimodal deep learning model for accurate prediction of pelvic lymph-node metastases in prostate cancer patients identified as candidates for extended pelvic lymph node dissection by preoperative nomograms
@@ -678,7 +758,7 @@
     </section>
 
     <section class="section" id="patents">
-      <h2 class="section-title">Patents</h2>
+      <h2 class="section-title"><span class="section-icon">⚙</span> Patents</h2>
       <ul class="patent-list">
         <li>
           <strong>A Brain Tumor Image Segmentation Method Based on Multiscale Convolution and Mamba Structure</strong>
@@ -692,18 +772,17 @@
     </section>
 
     <section class="section" id="honors">
-      <h2 class="section-title">Selected Honors and Awards</h2>
+      <h2 class="section-title"><span class="section-icon">🏆</span> Selected Honors and Awards</h2>
 
       <div class="split-two">
         <div>
           <h3 class="subsection-title">Academic Honors</h3>
           <ul class="award-list">
-            <li>
-              National Scholarship
-            </li>
-            <li>
-              Jiangsu Provincial “Three Good Student”
-            </li>
+            <li>National Scholarship</li>
+            <li>Jiangsu Provincial “Three Good Student”</li>
+            <li>Nantong “Three Good Student”</li>
+            <li>Outstanding Student of Nantong University</li>
+            <li>Outstanding Undergraduate Thesis of Jiangsu Province</li>
           </ul>
         </div>
 
@@ -730,13 +809,17 @@
               9th China International “Internet+” Innovation and Entrepreneurship Competition — Provincial First Prize
               <div class="award-note">• team project · ranked 3/10</div>
             </li>
+            <li>
+              15th Lanqiao Cup Software and IT Talent Competition — Provincial Second Prize
+              <div class="award-note">• Python group · individual</div>
+            </li>
           </ul>
         </div>
       </div>
     </section>
 
     <section class="section" id="education">
-      <h2 class="section-title">Education</h2>
+      <h2 class="section-title"><span class="section-icon">🎓</span> Education</h2>
       <ul class="edu-list">
         <li>
           <strong>University of Science and Technology of China</strong>,
@@ -749,7 +832,7 @@
     </section>
 
     <section class="section" id="contact">
-      <h2 class="section-title">Contact</h2>
+      <h2 class="section-title"><span class="section-icon">✉</span> Contact</h2>
       <ul class="contact-list">
         <li>Email: <a href="mailto:raychou@mail.ustc.edu.cn">raychou@mail.ustc.edu.cn</a></li>
         <li>GitHub: <a href="https://github.com/MohuaChou" target="_blank">github.com/MohuaChou</a></li>

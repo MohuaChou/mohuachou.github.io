@@ -6,7 +6,7 @@
   <title>Rui Zhou | Academic Homepage</title>
   <meta
     name="description"
-    content="Rui Zhou's academic homepage: pre-training, medical image analysis, multimodal learning, and audio generation."
+    content="Rui Zhou's academic homepage: pre-training, medical image analysis, multimodal learning, and video-to-audio redesign."
   />
   <style>
     :root {
@@ -584,8 +584,8 @@
             supervised by
             <a class="inline-link" href="https://www.linkedin.com/in/shaohua-kevin-zhou-231a094b/" target="_blank">Prof. Shaohua Kevin Zhou</a>.
             I am interested in pre-training, self-supervised learning, medical image analysis, multimodal deep learning,
-            and audio generation. My recent work spans data-efficient representation learning for 3D ultrasound analysis,
-            multimodal prediction on PET/CT, and controllable audio generation based on MMAudio pipelines.
+            and video-to-audio generation. My recent work spans data-efficient representation learning for 3D ultrasound analysis,
+            multimodal prediction on PET/CT, and acoustic mechanism constrained video-to-audio redesign.
           </div>
 
           <div class="quick-tags">
@@ -593,7 +593,7 @@
             <span class="tag">Self-Supervised Learning</span>
             <span class="tag">Medical Image Analysis</span>
             <span class="tag">Multimodal Learning</span>
-            <span class="tag">Audio Generation</span>
+            <span class="tag">Video-to-Audio Redesign</span>
           </div>
 
           <div class="hero-links">
@@ -623,7 +623,7 @@
         </div>
         <div class="area-item">
           <strong>Audio Generation.</strong>
-          <span>Event-centric and controllable video-to-audio generation, especially MMAudio style systems and late-stage control mechanisms.</span>
+          <span>Video-to-audio generation and redesign, with a focus on foreground-aware acoustic mechanism representation, timing alignment, dynamics control, and background-preserving remixing.</span>
         </div>
       </div>
     </section>
@@ -634,18 +634,21 @@
       <div class="project-list">
         <div class="project-item">
           <div class="project-head">
-            <h3 class="project-title">Controllable Audio Generation with MMAudio</h3>
+            <h3 class="project-title">Acoustic Mechanism Representation for Video-to-Audio Redesign</h3>
             <div class="project-date">Ongoing</div>
           </div>
           <div class="project-role">
             <span class="badge badge-navy">Current Research</span>
-            <span class="badge badge-green">Audio Generation</span>
-            <span class="badge badge-purple">Controllability</span>
+            <span class="badge badge-green">Video-to-Audio</span>
+            <span class="badge badge-purple">AMR</span>
           </div>
           <div class="project-body">
-            Exploring controllable video-to-audio generation, especially how text conditions can recover
-            influence from visually dominant late-stage conditioning. Current directions include clip attenuation,
-            clip gating, event-centric generation, and controllability-grounding tradeoffs.
+            Studying a foreground-aware video-to-audio redesign task: given a video, its original audio,
+            and a target sound condition, the goal is to preserve scene background and event timing while
+            redesigning the foreground event into a target sound source. The current framework combines
+            foreground/background separation, acoustic mechanism representation (AMR) extraction,
+            lightweight control adaptation, and background remixing to improve timing alignment and dynamic consistency
+            without relying on large-scale counterfactual paired data.
           </div>
         </div>
 

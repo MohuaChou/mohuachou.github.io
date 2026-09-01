@@ -6,7 +6,7 @@
   <title>Rui Zhou | Academic Homepage</title>
   <meta
     name="description"
-    content="Rui Zhou's academic homepage: pre-training, medical image analysis, multimodal learning, and video-to-audio redesign."
+    content="Rui Zhou's academic homepage: video-to-audio generation, generative-model interpretability, self-supervised pre-training, and medical image analysis."
   />
   <style>
     :root {
@@ -583,9 +583,10 @@
             <a class="inline-link" href="https://en.ustc.edu.cn/" target="_blank">University of Science and Technology of China (USTC)</a>
             supervised by
             <a class="inline-link" href="https://www.linkedin.com/in/shaohua-kevin-zhou-231a094b/" target="_blank">Prof. Shaohua Kevin Zhou</a>.
-            I am interested in pre-training, self-supervised learning, medical image analysis, multimodal deep learning,
-            and video-to-audio generation. My recent work spans data-efficient representation learning for 3D ultrasound analysis,
-            multimodal prediction on PET/CT, and acoustic mechanism constrained video-to-audio redesign.
+            I am interested in video-to-audio generation, generative-model interpretability, self-supervised learning,
+            medical image analysis, and multimodal deep learning. My recent work studies the local semantic response of
+            video-to-audio models and the causal role of register tokens in joint-attention diffusion transformers, alongside
+            data-efficient representation learning for 3D ultrasound and multimodal prediction on PET/CT.
           </div>
 
           <div class="quick-tags">
@@ -593,7 +594,8 @@
             <span class="tag">Self-Supervised Learning</span>
             <span class="tag">Medical Image Analysis</span>
             <span class="tag">Multimodal Learning</span>
-            <span class="tag">Video-to-Audio Redesign</span>
+            <span class="tag">Video-to-Audio Generation</span>
+            <span class="tag">Generative-Model Interpretability</span>
           </div>
 
           <div class="hero-links">
@@ -623,7 +625,11 @@
         </div>
         <div class="area-item">
           <strong>Audio Generation.</strong>
-          <span>Video-to-audio generation and redesign, with a focus on foreground-aware acoustic mechanism representation, timing alignment, dynamics control, and background-preserving remixing.</span>
+          <span>Video-to-audio generation with a focus on local semantic response, controlled visual edits, shot-to-interval routing, temporal alignment, and sound preservation.</span>
+        </div>
+        <div class="area-item">
+          <strong>Generative-Model Interpretability.</strong>
+          <span>Causal interventions and exact path decompositions for understanding how text conditioning and register tokens affect image denoising in joint-attention diffusion transformers.</span>
         </div>
       </div>
     </section>
@@ -634,28 +640,50 @@
       <div class="project-list">
         <div class="project-item">
           <div class="project-head">
-            <h3 class="project-title">Acoustic Mechanism Representation for Video-to-Audio Redesign</h3>
-            <div class="project-date">Ongoing</div>
+            <h3 class="project-title">LocalSoundBench: Do Video-to-Audio Models Respond Locally to Visual Changes?</h3>
+            <div class="project-date">2026–Present</div>
           </div>
           <div class="project-role">
             <span class="badge badge-navy">Current Research</span>
             <span class="badge badge-green">Video-to-Audio</span>
-            <span class="badge badge-purple">AMR</span>
+            <span class="badge badge-purple">Benchmark &amp; Intervention</span>
           </div>
           <div class="project-body">
-            Studying a foreground-aware video-to-audio redesign task: given a video, its original audio,
-            and a target sound condition, the goal is to preserve scene background and event timing while
-            redesigning the foreground event into a target sound source. The current framework combines
-            foreground/background separation, acoustic mechanism representation (AMR) extraction,
-            lightweight control adaptation, and background remixing to improve timing alignment and dynamic consistency
-            without relying on large-scale counterfactual paired data.
+            Introduced LocalSoundBench, a controlled benchmark that replaces one shot in a four-shot video while
+            keeping the remaining shots, positions, text prompt, and initial noise fixed. Across multiple V2A
+            architectures, CLAP-based Sound Preservation is 65.9–88.4%, but Joint Success is only 14.7–48.3%,
+            revealing that local visual edits frequently cause nonlocal semantic changes. I further designed Regional
+            Flow and aligned-versus-permuted training controls: matched routing reaches 75.0% accuracy on held-out
+            MMAudio groups versus 7.0% for permuted routing, while aligned training improves interval accuracy by
+            17.2–23.0 percentage points.
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-head">
+            <h3 class="project-title">Causal Analysis of Register Tokens in Joint-Attention DiTs</h3>
+            <div class="project-date">2026–Present</div>
+          </div>
+          <div class="project-role">
+            <span class="badge badge-navy">Current Research</span>
+            <span class="badge badge-blue">Qwen-Image</span>
+            <span class="badge badge-purple">Causal Intervention</span>
+          </div>
+          <div class="project-body">
+            Built a causal intervention framework for Qwen-Image-2512 that compares two prompts at an identical
+            latent and timestep, then decomposes attention contributions exactly into routing and content terms.
+            The implementation achieves a numerical conservation residual of 5.55×10<sup>−16</sup>. Donor
+            substitutions, semantic-token controls, depth sweeps, and full sampling trajectories show that register
+            tokens' layer-local outputs respond about 2–6.6× more strongly to routing than to content; the effect holds
+            across multiple layers, three prompt sets, two checkpoints, and twenty sampling steps. The framework is
+            covered by 391 tests.
           </div>
         </div>
 
         <div class="project-item">
           <div class="project-head">
             <h3 class="project-title">Grouped Cyclic Shift Masked Image Modeling for 3D Ultrasound</h3>
-            <div class="project-date">Major Revision</div>
+            <div class="project-date">Accepted</div>
           </div>
           <div class="project-role">
             <span class="badge badge-navy">Shenzhen Mindray Collaboration · Internship</span>
@@ -665,7 +693,9 @@
           <div class="project-body">
             A data-efficient self-supervised learning framework for 3D ultrasound analysis.
             The work combines Grouped Cyclic Shift, sparse computation, and Mask-Guided Feature Reformation
-            to improve masked image modeling under scarce-data settings.
+            to improve masked image modeling under scarce-data settings. Pre-trained on 1,082 3D ultrasound
+            volumes, it improves mean Dice by 2.92% under the 10% annotation setting and accelerates convergence
+            by approximately 25%.
           </div>
           <div class="project-links">
             <a class="mini-link" href="https://github.com/MohuaChou/GCSMIM" target="_blank">Code</a>
@@ -684,7 +714,9 @@
           </div>
           <div class="project-body">
             Built a multimodal deep learning pipeline for preoperative prediction of pelvic lymph-node metastases
-            in prostate cancer patients, using PET/CT modeling, transfer learning, and machine learning classification.
+            in prostate cancer patients by combining clinical variables, SUVmax, and PET/CT deep features.
+            The model reaches an AUC of 0.89 under leave-one-out cross-validation and 0.85 on the independent test
+            cohort, with the potential to reduce approximately 50% of unnecessary extended pelvic lymph-node dissections.
           </div>
           <div class="project-links">
             <a class="mini-link" href="https://doi.org/10.1007/s00259-024-07065-2" target="_blank">Paper</a>
@@ -697,7 +729,7 @@
     <section class="section" id="publications">
       <h2 class="section-title"><span class="section-icon">📘</span> Selected Publications</h2>
       <p class="section-desc">
-        MedAI
+        Peer-reviewed work in medical image analysis and multimodal clinical prediction.
       </p>
 
       <div class="pub-list">
@@ -710,7 +742,7 @@
 
           <div>
             <div class="pub-meta-top">
-              <span class="venue-badge badge-blue-top"> Medical Image Analysis · Major Revision </span>
+              <span class="venue-badge badge-blue-top"> Medical Image Analysis · Accepted </span>
             </div>
             <h3 class="pub-title">
               When Grouped Cyclic Shift Meets Masked Image Modeling: Effective Pre-training for Data-scarce 3D Ultrasound Analysis Tasks
@@ -738,7 +770,7 @@
 
           <div>
             <div class="pub-meta-top">
-              <span class="venue-badge badge-green-top"> EJNMMI · 2025 </span>
+              <span class="venue-badge badge-green-top"> EJNMMI · Published · 2025 </span>
             </div>
             <h3 class="pub-title">
               PSMA PET/CT based multimodal deep learning model for accurate prediction of pelvic lymph-node metastases in prostate cancer patients identified as candidates for extended pelvic lymph node dissection by preoperative nomograms
@@ -782,6 +814,8 @@
           <h3 class="subsection-title">Academic Honors</h3>
           <ul class="award-list">
             <li>National Scholarship</li>
+            <li>USTC First-Class Scholarship</li>
+            <li>Jiangsu Outstanding Undergraduate Thesis</li>
             <li>Jiangsu Provincial “Three Good Student”</li>
             <li>Nantong “Three Good Student”</li>
           </ul>

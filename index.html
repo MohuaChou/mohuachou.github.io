@@ -138,15 +138,11 @@
     .news-date { color: var(--accent); font-size: 12px; font-weight: 780; letter-spacing: .01em; padding-top: 2px; }
     .news-copy { font-size: 14px; color: #40516a; line-height: 1.65; }
     .news-copy strong { color: #26384f; }
-    details { margin-top: 7px; }
-    details summary { cursor: pointer; color: var(--primary); font-size: 12.5px; font-weight: 730; width: max-content; list-style: none; padding: 5px 0; }
-    details summary::-webkit-details-marker { display: none; }
-    details summary::before { content: "+ "; }
-    details[open] summary::before { content: "− "; }
     .pub-list { display: grid; gap: 26px; }
     .publication { display: grid; grid-template-columns: 205px minmax(0, 1fr); gap: 23px; align-items: start; }
     .pub-visual { position: relative; width: 100%; aspect-ratio: 1.35 / 1; background: #eef3f8; border-radius: 8px; border: 1px solid #dce5ee; overflow: hidden; display: grid; place-items: center; }
     .pub-visual img { position: absolute; width: 100%; height: 100%; object-fit: contain; background: #fff; }
+    .pub-visual.benchmark-visual { aspect-ratio: 2 / 1; background: #fff; }
     .paper-art { width: 100%; height: 100%; }
     .pub-venue { margin: 0 0 7px; font-size: 11px; color: var(--accent); font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
     .pub-venue.status-review { color: #5b6680; }
@@ -172,8 +168,10 @@
     .project-note { margin: 8px 0 0; color: #8190a1; font-size: 11.5px; line-height: 1.6; }
     .detail-points { padding-left: 18px; margin: 9px 0 0; color: #475971; font-size: 13px; line-height: 1.72; }
     .detail-points li { padding-left: 2px; margin-bottom: 4px; }
-    .experience-card { display: grid; grid-template-columns: 72px 1fr; gap: 17px; align-items: start; }
-    .exp-monogram { display: grid; place-items: center; width: 62px; height: 62px; border-radius: 9px; background: #e8f1f5; color: #1b637d; font-size: 16px; letter-spacing: .02em; font-weight: 800; }
+    .experience-list { display: grid; gap: 27px; }
+    .experience-card { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 17px; align-items: start; }
+    .exp-logo { display: grid; place-items: center; width: 88px; height: 72px; padding: 8px; border: 1px solid var(--stroke); border-radius: 9px; background: #fff; }
+    .exp-logo img { display: block; width: 100%; height: 100%; object-fit: contain; }
     .exp-title { margin: 0 0 3px; color: var(--ink); font-size: 18px; font-weight: 760; }
     .exp-meta { color: #7b8999; font-size: 12px; }
     .exp-description { margin: 9px 0 0; font-size: 13.5px; line-height: 1.8; color: #4e6076; }
@@ -232,8 +230,8 @@
       .metric-grid { grid-template-columns: repeat(2,1fr); gap: 8px; }
       .metric b { font-size: 17px; }
       .news-row { grid-template-columns: 76px minmax(0,1fr); gap: 10px; }
-      .experience-card { grid-template-columns: 52px 1fr; gap: 12px; }
-      .exp-monogram { width: 50px; height: 50px; font-size: 12px; }
+      .experience-card { grid-template-columns: 64px minmax(0, 1fr); gap: 12px; }
+      .exp-logo { width: 64px; height: 58px; padding: 6px; }
       .list-columns { grid-template-columns: 1fr; gap: 10px; }
       .contact-grid { grid-template-columns: 1fr; }
     }
@@ -253,7 +251,7 @@
           <img src="images/me.jpg" alt="Portrait of Rui Zhou" loading="eager" onerror="this.remove()">
         </div>
         <h2 class="sidebar-name">Rui Zhou <span>周瑞</span></h2>
-        <p class="sidebar-role">M.Sc. Student · USTC<br>Electronic Information · Class of 2028</p>
+        <p class="sidebar-role">M.Sc. Student · USTC<br><a href="https://miracle.ustc.edu.cn/" target="_blank" rel="noopener noreferrer">MIRACLE Lab</a><br>Electronic Information · Class of 2028</p>
         <p class="sidebar-interest">Multimodal Generation · Model Training</p>
         <div class="sidebar-contact"><a href="mailto:raychou@mail.ustc.edu.cn">raychou@mail.ustc.edu.cn</a></div>
       </div>
@@ -284,6 +282,7 @@
         <p class="intro-lead">
           I am a master's student in Electronic Information at the
           <a href="https://en.ustc.edu.cn/" target="_blank" rel="noopener noreferrer">University of Science and Technology of China</a>,
+          where I am a member of <a href="https://miracle.ustc.edu.cn/" target="_blank" rel="noopener noreferrer">MIRACLE Lab</a>,
           advised by <a href="https://www.linkedin.com/in/shaohua-kevin-zhou-231a094b/" target="_blank" rel="noopener noreferrer">Prof. Shaohua Kevin Zhou</a>.
         </p>
         <p class="intro-detail">My research focuses on how generative models respond to their conditions: how to update one sound without changing the others, and how to teach image generators to follow different spatial instructions. I also work on efficient self-supervised learning for medical images.</p>
@@ -301,14 +300,9 @@
           <li class="news-row"><time class="news-date" datetime="2026-11">2026.11</time><div class="news-copy">Working on <strong>spatial instruction following</strong> for image generation, with paired training, strong SFT baselines, and tests of general generation quality.</div></li>
           <li class="news-row"><time class="news-date" datetime="2026-10">2026.10</time><div class="news-copy"><strong>LocalSoundBench</strong>, our work on local visual edits and video-to-audio generation, is under review at ICLR 2027.</div></li>
           <li class="news-row"><time class="news-date" datetime="2026-09">2026.09</time><div class="news-copy"><strong>GCSMIM</strong> is available online in <em>Medical Image Analysis</em>. <a href="https://doi.org/10.1016/j.media.2026.104292" target="_blank" rel="noopener noreferrer">Paper ↗</a></div></li>
+          <li class="news-row"><time class="news-date" datetime="2025-02">2025.02</time><div class="news-copy">Started an algorithm internship at Mindray, working on data-efficient 3D ultrasound representation learning.</div></li>
+          <li class="news-row"><time class="news-date" datetime="2025-01">2025.01</time><div class="news-copy">Our PSMA PET/CT multimodal prediction paper appeared online in <em>European Journal of Nuclear Medicine and Molecular Imaging</em>.</div></li>
         </ol>
-        <details>
-          <summary>Earlier updates</summary>
-          <ol class="news-list">
-            <li class="news-row"><time class="news-date" datetime="2025-02">2025.02</time><div class="news-copy">Started an algorithm internship at Mindray, working on data-efficient 3D ultrasound representation learning.</div></li>
-            <li class="news-row"><time class="news-date" datetime="2025-01">2025.01</time><div class="news-copy">Our PSMA PET/CT multimodal prediction paper appeared online in <em>European Journal of Nuclear Medicine and Molecular Imaging</em>.</div></li>
-          </ol>
-        </details>
       </section>
 
       <section class="section" id="publications" aria-labelledby="publications-heading">
@@ -316,18 +310,9 @@
         <p class="section-intro">Peer-reviewed papers and current manuscripts. Review status is shown explicitly.</p>
         <div class="pub-list">
           <article class="publication">
-            <div class="pub-visual" role="img" aria-label="Illustration of local video edits and audio waveform preservation">
-              <svg class="paper-art" viewBox="0 0 260 192" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <rect width="260" height="192" fill="#f2f7fa"/>
-                <g fill="#dce9f3" stroke="#7593b0" stroke-width="1.4">
-                  <rect x="18" y="23" width="48" height="45" rx="5"/><rect x="77" y="23" width="48" height="45" rx="5"/><rect x="136" y="23" width="48" height="45" rx="5"/><rect x="195" y="23" width="48" height="45" rx="5"/>
-                </g>
-                <circle cx="42" cy="43" r="11" fill="#a4bfce"/><path d="M80 60l16-21 12 16 13-15" stroke="#517e9b" fill="none" stroke-width="2"/><circle cx="159" cy="44" r="10" fill="#0e7778" opacity=".73"/><path d="M202 57q10-22 27-13" fill="none" stroke="#507f9e" stroke-width="3"/>
-                <path d="M29 100c8-18 14 18 22 0s15 20 23 0 15-21 23 0 15 15 23 0 15-17 23 0 15 21 23 0 15-19 23 0 14 20 22 0" stroke="#6792ae" stroke-width="2.7" fill="none" stroke-linecap="round"/>
-                <rect x="130" y="80" width="46" height="43" rx="4" fill="#cee9e7" opacity=".75"/><path d="M132 100c10-19 15 19 22 0s10-13 17 0" stroke="#0e7778" stroke-width="3" fill="none"/>
-                <path d="M27 149h206" stroke="#c5d4e2" stroke-width="1.5"/><text x="25" y="167" font-family="Arial" font-size="10" fill="#6f8194">LOCAL VIDEO EDIT</text><text x="231" y="167" text-anchor="end" font-family="Arial" font-size="10" fill="#0e7778">AUDIO RESPONSE</text>
-              </svg>
-            </div>
+            <a class="pub-visual benchmark-visual" href="images/paper_localsoundbench.pdf" target="_blank" rel="noopener noreferrer" aria-label="View LocalSoundBench Figure 2: benchmark overview at full size">
+              <img src="images/paper_localsoundbench.png" width="1600" height="799" loading="lazy" alt="LocalSoundBench Figure 2: paired video replacement, interval evaluation, and control comparisons">
+            </a>
             <div>
               <p class="pub-venue status-review">ICLR 2027 · Under Review</p>
               <h3 class="pub-title">LocalSoundBench: Do Video-to-Audio Models Respond Locally to Visual Edits?</h3>
@@ -412,13 +397,23 @@
       </section>
 
       <section class="section" id="experience" aria-labelledby="experience-heading">
-        <div class="section-heading"><h2 class="section-title" id="experience-heading">Experience</h2><span class="section-side">Industry research</span></div>
-        <div class="experience-card">
-          <div class="exp-monogram" aria-hidden="true">Mindray</div>
-          <div>
-            <h3 class="exp-title">Algorithm Intern · Mindray</h3>
-            <div class="exp-meta">February 2025 – August 2025 · 3D Medical Imaging</div>
-            <p class="exp-description">Developed a self-supervised pre-training approach for data-scarce 3D ultrasound, including Grouped Cyclic Shift (GCS) and mask-aware feature reformation (MGFR). With 23 labeled volumes for fine-tuning, GCSMIM obtained 91.92% mean Dice versus 89.00% for HySparK in the reported setting. This work led to a first-author <em>Medical Image Analysis</em> paper.</p>
+        <div class="section-heading"><h2 class="section-title" id="experience-heading">Experience</h2><span class="section-side">Research &amp; industry</span></div>
+        <div class="experience-list">
+          <div class="experience-card">
+            <a class="exp-logo" href="https://miracle.ustc.edu.cn/" target="_blank" rel="noopener noreferrer" aria-label="MIRACLE Lab website"><img src="images/miracle-logo.png" width="256" height="256" loading="lazy" alt="MIRACLE Lab logo"></a>
+            <div>
+              <h3 class="exp-title">M.Sc. Student · MIRACLE Lab, USTC</h3>
+              <div class="exp-meta">September 2025 – Present · Suzhou Institute for Advanced Research</div>
+              <p class="exp-description">Advised by Prof. Shaohua Kevin Zhou. My research spans multimodal generation, generative-model analysis, and self-supervised learning for medical image analysis.</p>
+            </div>
+          </div>
+          <div class="experience-card">
+            <a class="exp-logo" href="https://www.mindray.com/en" target="_blank" rel="noopener noreferrer" aria-label="Mindray website"><img src="images/mindray-logo.png" width="404" height="104" loading="lazy" alt="Mindray logo"></a>
+            <div>
+              <h3 class="exp-title">Algorithm Intern · Mindray</h3>
+              <div class="exp-meta">February 2025 – August 2025 · 3D Medical Imaging</div>
+              <p class="exp-description">Developed a self-supervised pre-training approach for data-scarce 3D ultrasound, including Grouped Cyclic Shift (GCS) and mask-aware feature reformation (MGFR). With 23 labeled volumes for fine-tuning, GCSMIM obtained 91.92% mean Dice versus 89.00% for HySparK in the reported setting. This work led to a first-author <em>Medical Image Analysis</em> paper.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -428,8 +423,11 @@
         <div class="list-columns">
           <div>
             <ul class="plain-list">
-              <li><strong>National Scholarship</strong> · Graduate and undergraduate</li>
-              <li><strong>USTC First-Class Scholarship</strong></li>
+              <li><strong>National Scholarship (Graduate)</strong></li>
+              <li><strong>National Scholarship (Undergraduate)</strong></li>
+              <li><strong>USTC First-Class Scholarship</strong> · Two consecutive years during graduate study</li>
+              <li><strong>Nantong University First-Class Scholarship</strong> · Three consecutive years during undergraduate study</li>
+              <li><strong><a href="https://zjxy.ntu.edu.cn/2025/0109/c2188a259083/page.htm" target="_blank" rel="noopener noreferrer">“Ruihua Cup” University Student of the Year (2024)</a></strong> · One of 11 undergraduate recipients across Nantong University</li>
               <li><strong>National First Prize</strong> · Advanced Mapping Technology Competition</li>
               <li><strong>National Second Prize</strong> · Intelligent Car Competition</li>
               <li>Jiangsu Outstanding Undergraduate Thesis</li>

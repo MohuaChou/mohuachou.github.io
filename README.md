@@ -12,6 +12,13 @@ This is a **single-file** academic homepage: `index.html` contains all CSS and J
 
 No npm, Jekyll, CSS framework, or external JavaScript is required.
 
+## Figures and organization logos
+
+- `images/paper_localsoundbench.png` is rendered from the LocalSoundBench paper's Figure 2, `figures/main/fig2_benchmark_design.pdf`. Clicking the thumbnail opens the original PDF, saved as `images/paper_localsoundbench.pdf`.
+- `images/mindray-logo.png` is the wordmark from the [Mindray website](https://www.mindray.com/content/dam/xpace/en/site/common/logo.png).
+- `images/miracle-logo.png` is the avatar of the official [MIRACLE-Center GitHub organization](https://github.com/MIRACLE-Center).
+- The 2024 Ruihua Cup honor and the count of 11 undergraduate recipients follow the [Nantong University announcement](https://zjxy.ntu.edu.cn/2025/0109/c2188a259083/page.htm).
+
 ## Content checks before publishing
 
 - Update the ICLR review status after the actual decision.
